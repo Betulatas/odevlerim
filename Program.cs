@@ -1,48 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace or202
+namespace or214
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int b, c = 0, d;
-            Console.WriteLine("Kaç Adet Sayi Giriceksiniz");
-            b = Convert.ToInt32(Console.ReadLine());
-            int[] a = new int[b];
-            for (int i = 0; i < a.Length; i++)
+            byte a;
+            string s = " ";
+            string[] Birler = { "Bir", "İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz" };
+            string[] Onlar = { "On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan" };
+            Console.Write("Bir Sayı Giriniz: ");//72 – 80 – 6 
+            a = Byte.Parse(Console.ReadLine());
+            if (a > 0 && a <= 99)
             {
-                Console.WriteLine(i + 1 + ". Sayiyi Girin");
-                a[i] = Convert.ToInt32(Console.ReadLine());
+                if (a / 10 >= 1)
+                { //Sayı iki veya daha fazla basamaklı mı?
+                    s = Onlar[(a / 10) - 1];
+                }//s= yetmiş – seksen -
+                if (a % 10 != 0)
+                { //Sayının son basamağı sıfır değilse yaz
+                    s = s + Birler[(a % 10) - 1];
+                }//s= yetmiş+iki – “ altı”
+                Console.WriteLine(s);//yetmişiki – seksen – “ altı”
             }
-            for (int i = 0; i < a.Length; i++)
+            else
             {
-                Console.WriteLine(i + ". İndex'teki :" + a[i]);
+                Console.Write("Sayi 1 ile 99 arasında pozitif bir sayi değildir.");
             }
-            // 5 elemanlı bir X dizisi içinde son rakamı sıfır olan kaç tane sayı olduğunu hesaplar
-            int eleman = 0;
-
-            for (int i = 0; i < a.Length; i++)
-            {
-                if ((a[i] % 10) == 0)
-                {
-                    c += a[i];
-                    eleman++;
-                }
-            }
-            d = c / eleman;
-            Console.WriteLine("\n" + a.Length + " Adet Kadar Dizinizde Eleman Var.");
-            Console.WriteLine(eleman + " Adet Kadar Elemanın son basamaği 0'dır");
-            Console.WriteLine("Son Basamaği Sıfır olanların toplamı: " + c);
-            Console.WriteLine("Son Basamaği Sıfır olanların ortalamasi: " + d);
-            Console.ReadLine();
-            // ÖDEV: Yukarıdaki örneği son rakamı sıfır olan değerlerin toplamı ve ortalamasını da verecek şekilde yeniden yaz.
-
+            Console.ReadKey(true);
         }
     }
 }
 
+// ÖDEV: Programda önce girilen sayının en çok iki basamaklı ve 1 – 99 arasında pozitif sayı olduğunu kontrol ettiriniz. 
