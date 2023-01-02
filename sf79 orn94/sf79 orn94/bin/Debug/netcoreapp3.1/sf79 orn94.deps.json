@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "sf79 orn94/1.0.0": {
+        "runtime": {
+          "sf79 orn94.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "sf79 orn94/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
